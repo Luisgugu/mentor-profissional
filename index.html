@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Profissional - Descubra sua Carreira Ideal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 Mentor Profissional</h1>
+            <p>Descubra a carreira ideal para o seu futuro</p>
+        </header>
+
+        <main id="app" class="app">
+            <!-- Seção de Boas-vindas -->
+            <section id="welcome-section" class="section active">
+                <div class="welcome-content">
+                    <h2>Bem-vindo ao Mentor Profissional</h2>
+                    <p>Este questionário foi desenvolvido para ajudar você, aluno do 3º ano do ensino médio, a descobrir qual área profissional melhor se adequa ao seu perfil.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <span class="icon">📋</span>
+                            <h3>Questionário Personalizado</h3>
+                            <p>Perguntas específicas sobre suas habilidades e interesses</p>
+                        </div>
+                        <div class="feature">
+                            <span class="icon">🎯</span>
+                            <h3>Recomendações Inteligentes</h3>
+                            <p>Análise detalhada com base em seu perfil</p>
+                        </div>
+                        <div class="feature">
+                            <span class="icon">💼</span>
+                            <h3>Descrições de Profissões</h3>
+                            <p>Conheça oportunidades e salários</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="app.startQuiz()">Iniciar Questionário</button>
+                </div>
+            </section>
+
+            <!-- Seção de Questionário -->
+            <section id="quiz-section" class="section">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">Pergunta 1 de 10</div>
+
+                    <div id="quiz-content" class="quiz-content">
+                        <!-- Perguntas serão renderizadas aqui -->
+                    </div>
+
+                    <div class="quiz-buttons">
+                        <button class="btn btn-secondary" onclick="app.previousQuestion()" id="prev-btn" style="display:none;">Anterior</button>
+                        <button class="btn btn-primary" id="next-btn">Próxima</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Resultados -->
+            <section id="results-section" class="section">
+                <div class="results-container">
+                    <h2>🎉 Seus Resultados</h2>
+                    <p class="results-subtitle">Com base nas suas respostas, estas são as áreas mais adequadas para você:</p>
+
+                    <div id="results-list" class="results-list">
+                        <!-- Resultados serão renderizados aqui -->
+                    </div>
+
+                    <div class="results-buttons">
+                        <button class="btn btn-secondary" onclick="app.resetQuiz()">Fazer Questionário Novamente</button>
+                        <button class="btn btn-primary" onclick="app.downloadResults()">Baixar Resultados</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Mentor Profissional © 2024 - Ajudando jovens a encontrar seu caminho profissional</p>
+        </footer>
+    </div>
+
+    <!-- Modal para detalhes da profissão -->
+    <div id="profession-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="app.closeModal()">&times;</span>
+            <div id="modal-body" class="modal-body">
+                <!-- Detalhes da profissão serão renderizados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
